@@ -27,19 +27,11 @@ const exports = [
     declarations,
     exports
 })
-export class SuiTabsRootModule {}
-
-@NgModule({
-    imports: [
-        ...imports
-    ],
-    declarations,
-    exports
-})
 export class SuiTabsModule {
     public static forRoot():ModuleWithProviders {
         return {
-            ngModule: SuiTabsRootModule
+            ngModule: SuiTabsModule,
+            providers: []
         };
     }
 }

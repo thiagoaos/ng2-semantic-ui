@@ -28,20 +28,11 @@ const exports = [
     declarations,
     exports
 })
-export class SuiDropdownRootModule {}
-
-@NgModule({
-    imports: [
-        ...imports,
-        SuiTransitionModule
-    ],
-    declarations,
-    exports
-})
 export class SuiDropdownModule {
     public static forRoot():ModuleWithProviders {
         return {
-            ngModule: SuiDropdownRootModule
+            ngModule: SuiDropdownModule,
+            providers: []
         };
     }
 }

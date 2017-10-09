@@ -25,19 +25,11 @@ const exports = [
     declarations,
     exports
 })
-export class SuiRatingRootModule {}
-
-@NgModule({
-    imports: [
-        ...imports
-    ],
-    declarations,
-    exports
-})
 export class SuiRatingModule {
     public static forRoot():ModuleWithProviders {
         return {
-            ngModule: SuiRatingRootModule
+            ngModule: SuiRatingModule,
+            providers: []
         };
     }
 }

@@ -44,22 +44,11 @@ const exports = [
     declarations,
     exports
 })
-export class SuiSelectRootModule {}
-
-@NgModule({
-    imports: [
-        ...imports,
-        SuiDropdownModule,
-        SuiUtilityModule,
-        SuiLocalizationModule
-    ],
-    declarations,
-    exports
-})
 export class SuiSelectModule {
     public static forRoot():ModuleWithProviders {
         return {
-            ngModule: SuiSelectRootModule
+            ngModule: SuiSelectModule,
+            providers: []
         };
     }
 }

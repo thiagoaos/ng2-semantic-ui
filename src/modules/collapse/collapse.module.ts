@@ -21,19 +21,11 @@ const exports = [
     declarations,
     exports
 })
-export class SuiCollapseRootModule {}
-
-@NgModule({
-    imports: [
-        ...imports
-    ],
-    declarations,
-    exports
-})
 export class SuiCollapseModule {
     public static forRoot():ModuleWithProviders {
         return {
-            ngModule: SuiCollapseRootModule
+            ngModule: SuiCollapseModule,
+            providers: []
         };
     }
 }

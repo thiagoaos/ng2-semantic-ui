@@ -33,19 +33,11 @@ const exports = [
     declarations,
     exports
 })
-export class SuiCheckboxRootModule {}
-
-@NgModule({
-    imports: [
-        ...imports
-    ],
-    declarations,
-    exports
-})
 export class SuiCheckboxModule {
     public static forRoot():ModuleWithProviders {
         return {
-            ngModule: SuiCheckboxRootModule
+            ngModule: SuiCheckboxModule,
+            providers: []
         };
     }
 }

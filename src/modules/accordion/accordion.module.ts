@@ -28,21 +28,11 @@ const exports = [
     declarations,
     exports
 })
-export class SuiAccordionRootModule {}
-
-@NgModule({
-    imports: [
-        ...imports,
-        SuiCollapseModule,
-        SuiTransitionModule
-    ],
-    declarations,
-    exports
-})
 export class SuiAccordionModule {
     public static forRoot():ModuleWithProviders {
         return {
-            ngModule: SuiAccordionRootModule
+            ngModule: SuiAccordionModule,
+            providers: []
         };
     }
 }

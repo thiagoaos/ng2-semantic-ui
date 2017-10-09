@@ -21,19 +21,11 @@ const exports = [
     declarations,
     exports
 })
-export class SuiProgressRootModule {}
-
-@NgModule({
-    imports: [
-        ...imports
-    ],
-    declarations,
-    exports
-})
 export class SuiProgressModule {
     public static forRoot():ModuleWithProviders {
         return {
-            ngModule: SuiProgressModule
+            ngModule: SuiProgressModule,
+            providers: []
         };
     }
 }

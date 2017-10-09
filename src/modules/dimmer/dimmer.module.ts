@@ -23,20 +23,11 @@ const exports = [
     declarations,
     exports
 })
-export class SuiDimmerRootModule {}
-
-@NgModule({
-    imports: [
-        ...imports,
-        SuiTransitionModule
-    ],
-    declarations,
-    exports
-})
 export class SuiDimmerModule {
     public static forRoot():ModuleWithProviders {
         return {
-            ngModule: SuiDimmerRootModule
+            ngModule: SuiDimmerModule,
+            providers: []
         };
     }
 }

@@ -31,25 +31,16 @@ const exports = [
     ],
     declarations,
     entryComponents,
-    exports
-})
-export class SuiModalRootModule {}
-
-@NgModule({
-    imports: [
-        ...imports,
-        SuiDimmerModule,
-        SuiTransitionModule,
-        SuiUtilityModule
+    providers: [
+        SuiModalService
     ],
-    declarations,
-    entryComponents,
     exports
 })
 export class SuiModalModule {
     public static forRoot():ModuleWithProviders {
         return {
-            ngModule: SuiModalRootModule
+            ngModule: SuiModalModule,
+            providers: []
         };
     }
 }

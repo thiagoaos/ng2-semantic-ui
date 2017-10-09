@@ -31,22 +31,11 @@ const exports = [
     declarations,
     exports
 })
-export class SuiSearchRootModule {}
-
-@NgModule({
-    imports: [
-        ...imports,
-        SuiDropdownModule,
-        SuiLocalizationModule,
-        SuiUtilityModule
-    ],
-    declarations,
-    exports
-})
 export class SuiSearchModule {
     public static forRoot():ModuleWithProviders {
         return {
-            ngModule: SuiSearchRootModule
+            ngModule: SuiSearchModule,
+            providers: []
         };
     }
 }

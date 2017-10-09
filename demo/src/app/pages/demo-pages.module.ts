@@ -40,7 +40,7 @@ import { TestPage } from "./development/test/test.page";
         FormsModule,
         ReactiveFormsModule,
         RouterModule,
-        SuiModule,
+        SuiModule.forRoot(),
         DemoComponentsModule
     ],
     declarations: [
