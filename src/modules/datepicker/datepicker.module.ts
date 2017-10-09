@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+import { NgModule, ModuleWithProviders } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { SuiPopupModule } from "../popup/index";
@@ -18,38 +18,67 @@ import {
     SuiDatepickerDirectiveValidator
 } from "./directives/datepicker.directive";
 
+const imports = [
+    CommonModule,
+    FormsModule
+];
+
+const declarations = [
+    SuiCalendarItem,
+
+    SuiCalendarViewTitle,
+    SuiCalendarYearView,
+    SuiCalendarMonthView,
+    SuiCalendarDateView,
+    SuiCalendarHourView,
+    SuiCalendarMinuteView,
+
+    SuiDatepicker,
+    SuiDatepickerDirective,
+    SuiDatepickerDirectiveValueAccessor,
+    SuiDatepickerDirectiveValidator,
+    SuiDatepickerInputDirective
+];
+
+const entryComponents = [
+    SuiDatepicker
+];
+
+const exports = [
+    SuiDatepickerDirective,
+    SuiDatepickerDirectiveValueAccessor,
+    SuiDatepickerDirectiveValidator,
+    SuiDatepickerInputDirective
+];
+
 @NgModule({
     imports: [
-        CommonModule,
-        FormsModule,
+        ...imports,
+        SuiPopupModule.forRoot(),
+        SuiLocalizationModule.forRoot(),
+        SuiUtilityModule.forRoot()
+    ],
+    declarations,
+    entryComponents,
+    exports
+})
+export class SuiDatepickerRootModule {}
+
+@NgModule({
+    imports: [
+        ...imports,
         SuiPopupModule,
         SuiLocalizationModule,
         SuiUtilityModule
     ],
-    declarations: [
-        SuiCalendarItem,
-
-        SuiCalendarViewTitle,
-        SuiCalendarYearView,
-        SuiCalendarMonthView,
-        SuiCalendarDateView,
-        SuiCalendarHourView,
-        SuiCalendarMinuteView,
-
-        SuiDatepicker,
-        SuiDatepickerDirective,
-        SuiDatepickerDirectiveValueAccessor,
-        SuiDatepickerDirectiveValidator,
-        SuiDatepickerInputDirective
-    ],
-    exports: [
-        SuiDatepickerDirective,
-        SuiDatepickerDirectiveValueAccessor,
-        SuiDatepickerDirectiveValidator,
-        SuiDatepickerInputDirective
-    ],
-    entryComponents: [
-        SuiDatepicker
-    ]
+    declarations,
+    entryComponents,
+    exports
 })
-export class SuiDatepickerModule {}
+export class SuiDatepickerModule {
+    public static forRoot():ModuleWithProviders {
+        return {
+            ngModule: SuiDatepickerRootModule
+        };
+    }
+}

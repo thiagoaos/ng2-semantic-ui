@@ -1,15 +1,31 @@
-import { NgModule } from "@angular/core";
+import { NgModule, ModuleWithProviders } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { SuiTransition } from "./directives/transition";
 
+const imports = [
+    CommonModule
+];
+
+const declarations = [
+    SuiTransition
+];
+
+const exports = [
+    SuiTransition
+];
+
 @NgModule({
-    imports: [CommonModule],
-    declarations: [
-        SuiTransition
+    imports: [
+        ...imports
     ],
-    exports: [
-        SuiTransition
-    ],
-    providers: []
+    declarations,
+    exports
 })
-export class SuiTransitionModule {}
+export class SuiTransitionModule {
+    public static forRoot():ModuleWithProviders {
+        return {
+            ngModule: SuiTransitionModule,
+            providers: []
+        };
+    }
+}
