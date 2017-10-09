@@ -14,12 +14,12 @@ export class AppComponent {
 
         localizationService.load("pt", localizationPt);
         localizationService.patch("pt", {
-          datepicker: {
-            formats: {
-                date: "DD/MM/YYYY",
-                datetime: "DD/MM/YYYY"
+            datepicker: {
+                formats: {
+                    date: "DD/MM/YYYY",
+                    datetime: "DD/MM/YYYY"
+                }
             }
-          }
         });
         localizationService.setLanguage("pt");
     }

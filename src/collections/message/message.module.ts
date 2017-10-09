@@ -23,20 +23,10 @@ const exports = [
     declarations,
     exports
 })
-export class SuiMessageRootModule {}
-
-@NgModule({
-    imports: [
-        ...imports,
-        SuiTransitionModule
-    ],
-    declarations,
-    exports
-})
 export class SuiMessageModule {
     public static forRoot():ModuleWithProviders {
         return {
-            ngModule: SuiMessageRootModule
+            ngModule: SuiMessageModule
         };
     }
 }

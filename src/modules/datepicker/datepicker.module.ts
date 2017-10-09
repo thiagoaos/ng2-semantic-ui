@@ -62,23 +62,10 @@ const exports = [
     entryComponents,
     exports
 })
-export class SuiDatepickerRootModule {}
-
-@NgModule({
-    imports: [
-        ...imports,
-        SuiPopupModule,
-        SuiLocalizationModule,
-        SuiUtilityModule
-    ],
-    declarations,
-    entryComponents,
-    exports
-})
 export class SuiDatepickerModule {
     public static forRoot():ModuleWithProviders {
         return {
-            ngModule: SuiDatepickerRootModule
+            ngModule: SuiDatepickerModule
         };
     }
 }

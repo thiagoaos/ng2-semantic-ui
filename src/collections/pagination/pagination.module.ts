@@ -22,15 +22,6 @@ const exports = [
     declarations,
     exports
 })
-export class SuiPaginationRootModule {}
-
-@NgModule({
-    imports: [
-        ...imports
-    ],
-    declarations,
-    exports
-})
 export class SuiPaginationModule {
     public static forRoot():ModuleWithProviders {
         return {
